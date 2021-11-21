@@ -11,7 +11,7 @@ namespace UnityGame
             Container.BindInterfacesAndSelfTo<UISystem>().FromNew().AsSingle();
             Container.BindInterfacesAndSelfTo<GameStateMachine>().FromNew().AsSingle();
             Container.BindInterfacesAndSelfTo<SpawnSystem>().FromNew().AsSingle();
-            Container.BindInterfacesAndSelfTo<InputSystem>().FromNew().AsSingle();
+            Container.BindInterfacesAndSelfTo<InputSystemModel>().FromNew().AsSingle();
             Container.BindInterfacesAndSelfTo<PlayerModel>().FromNew().AsSingle();
 
             LogWrapper.Log("[MainInstaller] InstallBindings finished.");

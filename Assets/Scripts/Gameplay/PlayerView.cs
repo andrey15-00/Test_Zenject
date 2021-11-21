@@ -5,12 +5,14 @@ namespace UnityGame
 {
     public class PlayerView : MonoBehaviour, ISpawnable
     {
-        private IPlayer _model;
-
         public void Init(IPlayer model)
         {
-            _model = model;
-            LogWrapper.Log("[PlayerView] Init called!");
+            model.ShouldMove += Move;
+        }
+
+        private void Move(Vector2 input)
+        {
+            //LogWrapper.Log("[PlayerView] Move. Input: " + input);
         }
     }
 }
