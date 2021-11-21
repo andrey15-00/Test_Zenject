@@ -12,7 +12,6 @@ namespace UnityGame
         private void Init(IGameStateMachine stateMachine)
         {
             _gameStateMachine = stateMachine;
-            LogWrapper.Log("["+this.GetType()+"] Init called!");
         }
 
         public void Hide()

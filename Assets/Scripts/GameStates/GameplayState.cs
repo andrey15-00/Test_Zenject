@@ -9,12 +9,16 @@ namespace UnityGame
     {
         private IGameStateMachine _stateMachine;
         private IUISystem _uiSystem;
+        private IInputSystem _inputSystem;
+        private IPlayer _player;
 
 
-        public GameplayState(IGameStateMachine machine, IUISystem uiSystem)
+        public GameplayState(IGameStateMachine machine, IUISystem uiSystem, IInputSystem inputSystem, IPlayer player)
         {
             _stateMachine = machine;
             _uiSystem = uiSystem;
+            _inputSystem = inputSystem;
+            _player = player;
         }
 
         public void Enter()
@@ -29,7 +33,7 @@ namespace UnityGame
             _uiSystem.HideScreen<GameplayScreen>();
         }
 
-        public async void Tick(float deltaTime)
+        public void Tick(float deltaTime)
         {
             LogWrapper.Log($"[GameplayState] Tick.");
         }

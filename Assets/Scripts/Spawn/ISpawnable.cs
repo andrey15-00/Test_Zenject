@@ -1,4 +1,6 @@
-﻿namespace UnityGame
+﻿using UnityEngine;
+
+namespace UnityGame
 {
     public interface ISpawnable
     {
