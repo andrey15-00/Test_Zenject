@@ -1,10 +1,13 @@
 using Zenject;
 using UnityEngine;
 using System.Collections;
+using UnityGame;
 
 public class TestInstaller : MonoInstaller
 {
     public MethodInject _methodInject;
+    MethodInjectNonMonoBehaviour mongo = new MethodInjectNonMonoBehaviour();
+    public GameStateMachine gameStateMachine;
 
     public override void InstallBindings()
     {
@@ -16,7 +19,7 @@ public class TestInstaller : MonoInstaller
         // Method inject.
         Container.Bind<IBar>().To<Bar>().AsSingle();
         Container.Bind<IQux>().To<Qux>().AsSingle();
-        Container.Bind<MethodInject>().AsSingle();
+        // Container.Bind<MethodInject>().AsSingle();
     }
 }
 
