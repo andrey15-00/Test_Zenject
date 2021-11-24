@@ -5,7 +5,7 @@ namespace UnityGame
 {
     public interface IInputSystem
     {
-        event Action<Vector2> Move;
+        Vector2 MoveInput { get; }
 
         void PublishMove(Vector2 input);
     }

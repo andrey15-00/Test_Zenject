@@ -12,10 +12,7 @@ namespace UnityGame
         {
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
-            if(horizontal != 0 || vertical != 0)
-            {
-                _model.PublishMove(new Vector2(vertical, horizontal));
-            }
+            _model.PublishMove(new Vector2(vertical, horizontal));
         }
     }
 }

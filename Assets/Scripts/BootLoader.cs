@@ -54,7 +54,7 @@ namespace UnityGame
         {
             //TODO: Test.
             PlayerView playerView = _spawnSystem.Spawn<PlayerView>(null, Vector3.zero, Quaternion.identity);
-            playerView.Init(_player);
+            playerView.Init(_player, _inputSystem);
 
 
             _stateMachine.ChangeState<LoadingState>();

@@ -5,11 +5,11 @@ namespace UnityGame
 {
     public class InputSystemModel : IInputSystem
     {
-        public event Action<Vector2> Move;
+        public Vector2 MoveInput { get; private set; }
 
         public void PublishMove(Vector2 input)
         {
-            Move?.Invoke(input);
+            MoveInput = input;
         }
     }
 }

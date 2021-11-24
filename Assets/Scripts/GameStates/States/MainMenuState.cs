@@ -8,7 +8,6 @@ namespace UnityGame
     {
         private IGameStateMachine _stateMachine;
         private IUISystem _uiSystem;
-        private bool _loading;
 
 
         public MainMenuState(IGameStateMachine machine, IUISystem uiSystem)

@@ -5,14 +5,19 @@ namespace UnityGame
 {
     public class PlayerView : MonoBehaviour, ISpawnable
     {
-        public void Init(IPlayer model)
+        private IPlayer _model;
+        private IInputSystem _inputSystem;
+
+        public void Init(IPlayer model, IInputSystem inputSystem)
         {
-            model.ShouldMove += Move;
+            _model = model;
+            _inputSystem = inputSystem;
         }
 
-        private void Move(Vector2 input)
+        private void Update()
         {
-            //LogWrapper.Log("[PlayerView] Move. Input: " + input);
+            Vector2 input = _inputSystem.MoveInput;
+            transform.position += new Vector3(input.x, input.y, 0);
         }
     }
 }
